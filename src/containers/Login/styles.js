@@ -45,8 +45,7 @@ export const RightContainer = styled.div`
     font-weight: 800;
 
     a {
-      text-decoration: underline;
-      cursor: pointer;
+      text-decoration: underline;      
     }
   }
 `;
@@ -58,6 +57,7 @@ export const Title = styled.h2`
 
   span {
     color: #9758A6;
+    font-family: "Road Rage", sans-serif;
     ;
   }
 `;
@@ -90,8 +90,4 @@ export const InputContainer = styled.div`
     font-weight: 600;
     color: #fff;
   }
-`;
-
-export const Button = styled.button`
-
 `;
