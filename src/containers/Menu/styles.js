@@ -75,3 +75,27 @@ export const ProductsContainer = styled.div`
   max-width: 80rem;
   margin: 3.125rem auto;
 `;
+
+export const BackButton = styled(Link)`  
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  display: block;
+  text-align: center;
+  margin: 1rem auto 2rem;
+  
+  p {
+    margin: 0;
+    padding: 0;
+    color: #9758a6;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.25rem;
+  }
+
+  &:hover {
+    p {
+      color: #696969;
+    }
+  }
+`;

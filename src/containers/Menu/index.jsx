@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import {
+  BackButton,
   Banner,
   CategoryButton,
   CategoryMenu,
@@ -106,6 +107,7 @@ export function Menu() {
           <CardProduct product={product} key={product.id} />
         ))}
       </ProductsContainer>
+      <BackButton onClick={() => navigate('/')}><p>Voltar</p></BackButton>
     </Container>
   );
 }
