@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
+import { useUser } from '../../hooks/UserContext';
 import { api } from '../../services/api';
 import {
   Container,
@@ -19,6 +20,8 @@ import { Button } from '../../components/Button';
 
 export function Login() {
   const navigate = useNavigate();
+  const { putUserData } = useUser();
+
   const schema = yup
     .object({
       email: yup
@@ -41,9 +44,7 @@ export function Login() {
   });
 
   const onSubmit = async (data) => {
-    const {
-      data: { token },
-    } = await toast.promise(
+    const { data: userData } = await toast.promise(
       api.post('/session', {
         email: data.email,
         password: data.password,
@@ -62,7 +63,7 @@ export function Login() {
       },
     );
 
-    localStorage.setItem('token', token);
+    putUserData(userData);
   };
 
   return (
